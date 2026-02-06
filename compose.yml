@@ -8,8 +8,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: auth_ab
-     ports:
-        - "5432:5432"
 
 
     backend: 
@@ -17,7 +15,7 @@ services:
      image: backend:latest
      container_name: backend_container
      enviornment:
-      DATABASE_URL : postgresql://postgres:root@localhost:5432/auth_db
+      DATABASE_URL : postgresql://postgres:root@db:5432/auth_db
       ports: 
       - 8000:8000
       depends_on:
