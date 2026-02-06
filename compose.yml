@@ -2,9 +2,9 @@ version: 3.9
 
 services:
     db:
-     build: .
-     image: postgres:15
-     container_name: postgres_db
+     build: 
+       context: .
+       dockerfile: Dockerfile.db
      enviornment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
@@ -15,11 +15,11 @@ services:
 
 
     backend: 
-     build: .
-     image: backend:latest
-     container_name: backend_container
-     enviornment:
-      DATABASE_URL : postgresql://postgres:root@db:5432/auth_db
+     build: 
+       context: .
+       dockerfile: Dockerfile.backend
+    #  enviornment:
+      # DATABASE_URL : postgresql://postgres:root@db:5432/auth_db
      ports: 
       - 8000:8000
      depends_on:
