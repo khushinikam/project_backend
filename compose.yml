@@ -4,7 +4,7 @@ services:
     db:
      build: 
        context: .
-       dockerfile: Dockerfile.db
+       dockerfile: /home/lap-60/Desktop/backendProject/compose.yml
      enviornment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
@@ -17,7 +17,7 @@ services:
     backend: 
      build: 
        context: .
-       dockerfile: Dockerfile.backend
+       dockerfile: /home/lap-60/Desktop/backendProject/Dockerfile.backend
     #  enviornment:
       # DATABASE_URL : postgresql://postgres:root@db:5432/auth_db
      ports: 
