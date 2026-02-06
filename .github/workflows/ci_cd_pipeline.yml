@@ -58,7 +58,7 @@ jobs:
         
       - name: Build database image
         run: |
-          docker build -f Dockerfile.database -t ${{ secrets.DOCKERHUB_USERNAME }}/database:latest .
+          docker build -f Dockerfile.db -t ${{ secrets.DOCKERHUB_USERNAME }}/database:latest .
           
       - name: Push Docker image
         run: |
