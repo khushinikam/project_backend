@@ -2,21 +2,28 @@ version: 3.9
 
 services:
     db:
+     build: .
      image: postgres:15
      container_name: postgres_db
      enviornment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: auth_ab
+     volumes: 
+       - postgres_data:/var/lib/postgresql/data
+      
 
 
     backend: 
-     build: ./
+     build: .
      image: backend:latest
      container_name: backend_container
      enviornment:
       DATABASE_URL : postgresql://postgres:root@db:5432/auth_db
-      ports: 
+     ports: 
       - 8000:8000
-      depends_on:
+     depends_on:
       - db
+
+    volumes:
+       postgres_data
