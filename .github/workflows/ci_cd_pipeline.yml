@@ -69,7 +69,7 @@ jobs:
            docker stop backend || true
            docker stop database || true
            docker run -d -p 8000:8000 khushinikam/backend:latest
-           docker run -d -p 8000:8000 khushinikam/database:latest
+           docker run -d -p 5432:5432 khushinikam/database:latest
         
       - name: Show app URL
         run: echo "App is live at http://localhost:8000"
