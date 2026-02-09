@@ -6,7 +6,7 @@ print("Connection start")
 
 BaseClass.metadata.create_all(bind=engine)
 
-print("Connection built")
+print("Connection is built")
 
 app = FastAPI()
 
