@@ -70,9 +70,7 @@ jobs:
            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/database:latest
            docker compose up -d
-      #      docker stop backend || true
-      #      docker stop database || true
-      #      docker run -d -p 8000:8000 khushinikam/backend:latest
-      #      docker run -d -p 5432:5432 khushinikam/database:latest
+    
+ 
         
     
